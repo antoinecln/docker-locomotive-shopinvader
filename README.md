@@ -2,14 +2,45 @@
 
 This is the official container for shopinvader
 
-## How to use this image
+## How to use this image with docker-compose
 
 Copy the file docker-compose.yml of this directory
 create the directy tmp, log, public/sites, public/uploaded_assets
 
 Run it with ```docker-compose up```. Locomotive is now available on http://localhost:3000
 
+## How to use this images with Docky
 
+Clone this repository with 
+
+```
+git clone https://github.com/antoinecln/docker-locomotive-shopinvader.git -b v3.4.x
+```
+
+Then, go in your directory and execute :
+
+```
+docky run
+```
+Now you are inside your container, execute :
+
+```
+bundle install 
+```
+It will download and install all gems in your Gemfile.
+
+Execute this command to lunch your Puma server :
+
+```
+bundle exec puma -C config/puma.rb
+```
+You can find this command in your Dockerfile.
+
+To access your site, go on this address : 
+
+http://shopinvader-server.dy
+
+Create a account and let's create and custom your Shopinvader website!
 
 # Develop / Debug
 
